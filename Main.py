@@ -5,13 +5,13 @@ import streamlit as st
 from API import get_prediction
 
 # path to trained model
-model_path = r"C:\Users\Calvin\phishing dp\Phishing-Attack-Domain-Detection\models\Malicious_URL_Prediction.h5"
+model_path = r"C:\Users\Calvin\Desktop\phishing dp project exam\Phishing-Attack-Domain-Detection\models\Malicious_URL_Prediction.h5"
 
-# input url
+# input url 123
 #url = "www.tesla.com/"
 
 def main():
-    st.title("CyberKavach")
+    st.title("CyberKavach Phishing URL Detector")
     html_temp = """
     <div style="background-color:#025246 ;padding:10px">
     <h2 style="color:white;text-align:center;">Phishing URL Detector </h2>
@@ -23,19 +23,19 @@ def main():
     url = st.text_input("Enter ur url","Type Here")
     
     safe_html="""  
-      <div style="background-color:#00ff95;padding:10px >
-       <h2 style="color:white;text-align:center;"> Your url is safe</h2>
+      <div style="background-color:#00ff95;padding:30px >
+       <h1 style="color:black;text-align:center;"> Your url is safe</h2>
        </div>
     """
     danger_html="""  
       <div style="background-color:#F08080;padding:10px >
-       <h2 style="color:black ;text-align:center;"> Your url is unsafe</h2>
+       <h2 style="color:rgb(14, 17, 23 ;text-align:center;"> Your url is unsafe</h2>
        </div>
     """
 
     if st.button("Predict"):
         output=get_prediction(url,model_path)
-        st.success('The probability of url being malicious is {}'.format(output))
+        # st.success('The probability of url being malicious is {}'.format(output))
         
     
 
