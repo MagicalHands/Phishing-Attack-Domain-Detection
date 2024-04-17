@@ -3,7 +3,7 @@ from tensorflow import keras
 from Feature_Extractor import extract_features
 
 
-# ------------------------------------------------------------------------
+
 
 # This function takes the url and returns probability value
 
@@ -23,3 +23,4 @@ def get_prediction(url, model_path):
     print("There is ",i,"% chance,the url is malicious !")
 
     return i
+
